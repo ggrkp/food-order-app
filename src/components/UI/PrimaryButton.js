@@ -1,4 +1,4 @@
-import styles from './PrimaryButton.module.css'
+import styles from './Button.module.css'
 
 const PrimaryButton = (props) =>{
     return(

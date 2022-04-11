@@ -21,13 +21,7 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25)
 }
 
-.float-right {
-    float: right;
-}
 
-.clearfix {
-    clear: both;
-}
 
 .modal-title {
     font-size: 28px;
@@ -90,6 +84,24 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.float-right {
+    display: flex;
+    flex-direction: column;
+    float: right;
+    align-items: flex-end;
+}
+
+
+.clearfix {
+    clear: both;
+}
+
+.total-amount {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 @media only screen and (max-width: 600px) {
