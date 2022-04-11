@@ -1,0 +1,17 @@
+.input-container {}
+
+.item-label {
+    margin-right: 15px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+.item-input {
+    width: 35px;
+    font-size: 18px;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    border: none;
+    border-radius: 2px;
+    outline: none;
+}

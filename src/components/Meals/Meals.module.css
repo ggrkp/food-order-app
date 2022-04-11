@@ -1,0 +1,19 @@
+.container {
+  animation: meals-appear 1s ease-out forwards;
+  margin: auto;
+  max-width: 1024px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+@keyframes meals-appear {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

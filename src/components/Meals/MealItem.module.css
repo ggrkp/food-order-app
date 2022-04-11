@@ -1,0 +1,36 @@
+.meal {
+    width: 65%;
+    margin: auto;
+    text-align: center;
+    margin-top:10px;
+    padding: 5px 10px 5px 10px;
+    background-color: #f7f7f7;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+}
+
+.meal-name {
+    font-weight: bold;
+    font-size: 30px;
+    margin: 15px 15px 15px 0;
+}
+
+.meal-price {
+    color: green;
+    margin: 15px 15px 15px 0;
+    font-size: 24px;
+}
+
+.meal-desc {
+    font-style: italic;
+    font-size:16px;
+    margin: 15px 15px 15px 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .meal {
+      width: 100%;
+    }
+  }

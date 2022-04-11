@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+
+.title {
+    font-weight: bold;
+    text-shadow: 4px 4px rgba(0, 0, 0, 0.3);
+    font-size: 130px;
+    font-family: 'Unica One', cursive;
+}
+
+.header {
+    z-index: 0;
+    overflow: hidden;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    background: #e53935;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #e35d5b, #e53935);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #e35d5b, #e53935);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    color: white;
+    font-size: 30px;
+
+    animation: meals-appear 1s ease-out forwards;
+}
+
+@keyframes meals-appear {
+    from {
+      opacity: 0;
+      transform: translateY(-3rem);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+
+  }
+
+.header-right {
+    float: right; 
+  
+}
+
+.clearfix {
+    clear: both;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .title {
+        font-size: 100px;
+    }
+    .header-right {
+        float: none; 
+    }
+}
