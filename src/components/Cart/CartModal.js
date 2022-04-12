@@ -31,17 +31,18 @@ const CartModal = (props) => {
             <div id="cart-modal" className={styles["modal"]}>
                 <div className={styles["modal-content"]}>
                     <span onClick={closeModalHandler} className={styles["close"]}>&times;</span>
+                    
                     {/* Modal Title */}
                     <h1 className={styles["modal-title"]}>Your Cart</h1>
 
-                    {/* Modal Content - Cart Items */}
+                    {/* Modal Content - Cart Items List! */}
                     {itemList}
 
                     {/* <CartItemList /> Mporei na ginei kai me ksexwristo component... */}
 
                     {/* Order Button */}
                     <div className={styles["float-right"]}>
-                        
+
                         <div
                             className={styles["total-amount"]}>
                             Total Amount: <FontAwesomeIcon icon={faDollarSign} /> 50
@@ -50,9 +51,13 @@ const CartModal = (props) => {
                         <div className={styles["btn-container"]}>
                             <PrimaryButton
                                 id="order-btn"
-                                buttonText={<>Place Order<FontAwesomeIcon icon={faPaperPlane} /></>}
-                                onClick={orderHandler}
-                            />
+                                onClick={orderHandler}>
+                                Place Order
+                                <FontAwesomeIcon icon={faPaperPlane} />
+                            </PrimaryButton>
+
+
+
                         </div>
 
                     </div>

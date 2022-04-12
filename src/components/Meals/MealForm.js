@@ -23,7 +23,7 @@ const MealForm = () => {
                     defaultValue: '1'
                 }
             } />
-            <PrimaryButton onClick={handleSubmit} buttonText={<><FontAwesomeIcon icon={faPlus} />  Add to cart</>} />
+            <PrimaryButton onClick={handleSubmit} ><FontAwesomeIcon icon={faPlus} />  Add to cart</PrimaryButton>
         </form>
     )
 }

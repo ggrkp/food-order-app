@@ -21,7 +21,7 @@ const Header = props => {
         <>
             {openModal && <CartModal onCloseModal={closeModalHandler} />}
             <header className={styles.header}>
-                <h1 className={styles.title}>yummy.</h1>
+                <h1 className={styles.title}>yummy</h1>
                 <div className={styles["header-right"]}>
                     <HeaderCartButton onClick={cartClickHandler} />
                 </div>
