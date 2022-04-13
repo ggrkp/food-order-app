@@ -2,17 +2,13 @@ import styles from './HeaderCartButton.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import { useContext } from 'react'
-import CartContext from '../../store/cart-context'
+import CartContext from '../../store/cart-context' //Here we want the context itself in order to use it. Not Context Provider.
 
 const HeaderCartButton = props => {
 
     const cartCtx = useContext(CartContext)
-
-    const cartItemsNumber = cartCtx.items
-        .reduce((currNum, item) => {
-            return currNum + item.amount
-        }, 0)
-
+    const cartAmount = cartCtx.itemList.reduce((prevVal,currVal) => prevVal + currVal.amount, 0)
+    
     return (
         <>
             <button
@@ -21,7 +17,7 @@ const HeaderCartButton = props => {
                 <FontAwesomeIcon icon={faCartShopping} />
                 Your Cart
                 <span className={styles["item-count"]}>
-                    {cartItemsNumber}
+                    {cartAmount}
                 </span>
             </button>
         </>
