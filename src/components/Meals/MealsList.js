@@ -28,8 +28,15 @@ const MealsList = () => {
             price: 18.99,
         },
     ];
-    
-    const mealList = data.map(meal => <MealItem meal={meal} />)
+
+    const mealList = data.map((meal) =>
+        <MealItem
+            id={meal.id}
+            name={meal.name}
+            description={meal.description}
+            price={meal.price}
+        />)
+        
     return (
         <ul>
             {mealList}

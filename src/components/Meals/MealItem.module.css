@@ -2,10 +2,10 @@
     width: 65%;
     margin: auto;
     /* text-align: center; */
-    margin-top:10px;
-    padding:5px 30px 5px 30px;
+    margin-top: 10px;
+    padding: 5px 30px 5px 30px;
     background-color: #f7f7f7;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     margin-bottom: 10px;
     padding-bottom: 15px;
@@ -25,29 +25,37 @@
 
 .meal-desc {
     font-style: italic;
-    font-size:16px;
+    font-size: 16px;
     margin: 15px 15px 15px 0;
 }
 
-.flex-container{
+.flex-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.meal-form{
+.meal-form {
     align-self: flex-end;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 951px) {
     .meal {
-      width: 100%;
-      text-align: center;
+        text-align: center;
+        width: 70%;
     }
 
-    .flex-container{
+    .flex-container {
         display: block;
 
     }
-    
-  }
+}
+
+@media only screen and (max-width: 760px) {
+    .meal {
+        width: 100%;
+    }
+
+
+
+}
