@@ -9,7 +9,8 @@ import { useContext } from 'react'
 const MealItem = (props) => {
 
     const cartCtx = useContext(CartContext)
-
+    // We call that here because here we do have all the information
+    //  we need about the meal item to be added to cart.
     const addToCartHandler = (amount) => {
         const newItem = {
             id: props.id,
@@ -19,16 +20,10 @@ const MealItem = (props) => {
         }
         console.log(newItem)
         cartCtx.addItem(newItem)
-
-
-    }   
-    const testHandler = () => {
-        console.log(props.name)
-        console.log(props.id)
     }
 
     return (
-        <li onClick={testHandler} className={styles.meal}>
+        <li className={styles.meal}>
             <div className={styles["flex-container"]}>
                 <div>
                     <h3 className={styles["meal-name"]}>{props.name} </h3>
