@@ -5,12 +5,14 @@
     margin-top: 10px;
     padding: 5px 30px 5px 30px;
     background-color: #f7f7f7;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);    border-radius: 5px;
     margin-bottom: 10px;
     padding-bottom: 15px;
+    transition: 0.3s
 }
-
+.meal:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
 .meal-name {
     font-weight: bold;
     font-size: 30px;

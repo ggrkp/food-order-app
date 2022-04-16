@@ -6,16 +6,14 @@ import PrimaryButton from '../UI/PrimaryButton'
 import CartItem from './CartItem'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane, faDollarSign } from '@fortawesome/free-solid-svg-icons'
+import { useContext } from 'react'
+import CartContext from '../../store/cart-context'
+
 
 const CartModal = (props) => {
-
-    //  ! dummy cart items 
-    const cartItemsArray = [
-        { name: 'Item 1', price: 100 },
-        { name: 'Item 2', price: 40 },
-
-    ]
-    const itemList = cartItemsArray.map(item => <CartItem item={item} />)
+    const cartCtx = useContext(CartContext)
+    const itemList = cartCtx.itemList.map(item => <CartItem item={item} />)
+    const hasItems = itemList.length > 0
 
     const closeModalHandler = () => {
         props.onCloseModal()
@@ -31,36 +29,36 @@ const CartModal = (props) => {
             <div id="cart-modal" className={styles["modal"]}>
                 <div className={styles["modal-content"]}>
                     <span onClick={closeModalHandler} className={styles["close"]}>&times;</span>
-                    
+
                     {/* Modal Title */}
                     <h1 className={styles["modal-title"]}>Your Cart</h1>
 
                     {/* Modal Content - Cart Items List! */}
-                    {itemList}
+
+                    {hasItems ? (itemList) : <p>Currently, there are no items in your cart.</p>}
 
                     {/* <CartItemList /> Mporei na ginei kai me ksexwristo component... */}
 
                     {/* Order Button */}
-                    <div className={styles["float-right"]}>
+                    {hasItems > 0 &&
+                        <div className={styles["float-right"]}>
 
-                        <div
-                            className={styles["total-amount"]}>
-                            Total Amount: <FontAwesomeIcon icon={faDollarSign} /> 50
-                        </div>
+                            <div
+                                className={styles["total-amount"]}>
+                                Total Amount: <FontAwesomeIcon icon={faDollarSign} /> {cartCtx.totalAmount}
+                            </div>
 
-                        <div className={styles["btn-container"]}>
-                            <PrimaryButton
-                                id="order-btn"
-                                onClick={orderHandler}>
-                                Place Order
-                                <FontAwesomeIcon icon={faPaperPlane} />
-                            </PrimaryButton>
+                            <div className={styles["btn-container"]}>
+                                <PrimaryButton
+                                    id="order-btn"
+                                    onClick={orderHandler}>
+                                    Place Order
+                                    <FontAwesomeIcon icon={faPaperPlane} />
+                                </PrimaryButton>
+                            </div>
 
+                        </div>}
 
-
-                        </div>
-
-                    </div>
                     <div className={styles.clearfix}></div>
 
                 </div>
