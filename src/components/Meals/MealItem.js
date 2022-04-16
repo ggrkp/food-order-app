@@ -13,7 +13,7 @@ const MealItem = (props) => {
     //  we need about the meal item to be added to cart.
     const addToCartHandler = (amount) => {
         const newItem = {
-            id: props.id,
+            id: 'amount_' + props.id,
             name: props.name,
             price: props.price,
             amount: amount
@@ -32,7 +32,7 @@ const MealItem = (props) => {
                 </div>
                 <div className={styles["meal-form"]}>
                     {/* Into this form, meal amount is calculated and returned. */}
-                    <MealForm onAddToCart={addToCartHandler} />
+                    <MealForm id={props.id} onAddToCart={addToCartHandler} />
                 </div>
             </div>
         </li >

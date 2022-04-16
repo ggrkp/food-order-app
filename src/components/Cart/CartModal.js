@@ -12,8 +12,25 @@ import CartContext from '../../store/cart-context'
 
 const CartModal = (props) => {
     const cartCtx = useContext(CartContext)
-    const itemList = cartCtx.itemList.map(item => <CartItem item={item} />)
-    const hasItems = itemList.length > 0
+
+    const cartItemRemoveHandler = (id) => {
+        cartCtx.removeItem(id)
+    }
+    const cartItemAddHandler = (item) => {
+        cartCtx.addItem({ ...item, amount: 1 })
+    }
+
+    const itemList = cartCtx.items.map(item =>
+        <CartItem
+            key={item.id}
+            name={item.name}
+            amount={item.amount}
+            price={item.price}
+            onRemove={cartItemRemoveHandler.bind(null, item.id)}
+            onAdd={cartItemAddHandler.bind(null, item)}
+        />)
+
+    const hasItems = cartCtx.items.length > 0
 
     const closeModalHandler = () => {
         props.onCloseModal()
@@ -34,18 +51,16 @@ const CartModal = (props) => {
                     <h1 className={styles["modal-title"]}>Your Cart</h1>
 
                     {/* Modal Content - Cart Items List! */}
-
-                    {hasItems ? (itemList) : <p>Currently, there are no items in your cart.</p>}
-
-                    {/* <CartItemList /> Mporei na ginei kai me ksexwristo component... */}
-
+                    <div className={styles["item-list"]}>
+                        {hasItems ? (itemList) : <p>Currently, there are no items in your cart.</p>}
+                    </div>
                     {/* Order Button */}
                     {hasItems > 0 &&
                         <div className={styles["float-right"]}>
 
                             <div
                                 className={styles["total-amount"]}>
-                                Total Amount: <FontAwesomeIcon icon={faDollarSign} /> {cartCtx.totalAmount}
+                                Total Amount: <FontAwesomeIcon icon={faDollarSign} /> {cartCtx.totalAmount.toFixed(2)}
                             </div>
 
                             <div className={styles["btn-container"]}>

@@ -31,12 +31,14 @@ const MealsList = () => {
 
     const mealList = data.map((meal) =>
         <MealItem
-            id={meal.id}
+            id={meal.id} 
+            key={meal.id}
             name={meal.name}
             description={meal.description}
             price={meal.price}
+
         />)
-        
+
     return (
         <ul>
             {mealList}

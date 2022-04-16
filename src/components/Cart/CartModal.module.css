@@ -8,6 +8,7 @@
     left: 0;
     top: 0;
     width: 100%;
+
     /* Full width */
     height: 100%;
     /* Full height */
@@ -21,12 +22,17 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25)
 }
 
-p{
-    font-size:16px;
-    color: darkred;
+p {
+    font-size: 17px;
     font-weight: bold;
 }
 
+.item-list {
+    min-height: 10rem;
+    max-height: 30rem;
+    overflow: scroll;
+    overflow-x: hidden;
+}
 
 .modal-title {
     font-size: 28px;
@@ -109,7 +115,7 @@ p{
     margin-bottom: 20px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
 
     .modal-content {
         width: 100%;

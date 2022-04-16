@@ -3,32 +3,22 @@ import Card from '../UI/Card'
 import styles from './CartItem.module.css'
 import PrimaryButton from '../UI/PrimaryButton'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faMinus, faMultiply } from '@fortawesome/free-solid-svg-icons'
 
 const CartItem = (props) => {
-
-    const plusHandler = props => {
-
-     }
-    const minusHandler = props => {
-
-     }
-
-    const meal = props.item
-   
     return (
         <Card >
             <div>
-                <h3 className={styles.name}>{meal.name} </h3>
-                <h4 className={styles.price}>$ {meal.price} </h4>
-                <p>Quantity: {meal.amount}</p>
+                <h3 className={styles.name}>{props.name} </h3>
+                <h4 className={styles.price}>$ {props.price} </h4>
+                <p><FontAwesomeIcon icon={faMultiply} /> {props.amount}</p>
             </div>
             <div>
-                <PrimaryButton onClick={minusHandler}>
+                <PrimaryButton onClick={props.onRemove}>
                     <FontAwesomeIcon icon={faMinus} />
                 </PrimaryButton>
-                
-                <PrimaryButton onClick={plusHandler}>
+
+                <PrimaryButton onClick={props.onAdd}>
                     <FontAwesomeIcon icon={faPlus} />
                 </PrimaryButton>
             </div>
