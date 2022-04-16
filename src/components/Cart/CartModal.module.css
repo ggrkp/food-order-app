@@ -8,7 +8,6 @@
     left: 0;
     top: 0;
     width: 100%;
-
     /* Full width */
     height: 100%;
     /* Full height */
@@ -20,6 +19,27 @@
     /* Black w/ opacity */
     padding: 1rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25)
+}
+
+.modal-slide{
+    animation: slide-down 300ms ease-out forwards;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    font-size: 16px;
+    padding: 1rem;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    background-color: #F1F1F1;
+    margin: 50% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    
+
+    /* Could be more or less, depending on screen size */
 }
 
 p {
@@ -49,22 +69,7 @@ p {
     font-size: 12px;
 }
 
-/* Modal Content/Box */
-.modal-content {
-    font-size: 16px;
-    padding: 1rem;
-    border-radius: 14px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-    background-color: #F1F1F1;
-    margin: 15% auto;
-    /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%;
-    animation: slide-down 300ms ease-out forwards;
 
-    /* Could be more or less, depending on screen size */
-}
 
 /* The Close Button */
 .close {
@@ -81,10 +86,9 @@ p {
     cursor: pointer;
 }
 
-.modal-title {}
 
-.modal-footer {}
 
+/* Thelw na emfanizetai ayto mono thn prwth fora pou ginetai render. mallon kapws use effect. */
 @keyframes slide-down {
     from {
         opacity: 0;

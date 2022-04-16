@@ -39,10 +39,10 @@ const CartModal = (props) => {
     const orderHandler = () => {
         console.log('Ordering...')
     }
+    // todo: Prosthiki modal slide down otan ginetai gia prwth fora render to component.
 
     const ModalOverlay = (props) => {
         return (
-
             <div id="cart-modal" className={styles["modal"]}>
                 <div className={styles["modal-content"]}>
                     <span onClick={closeModalHandler} className={styles["close"]}>&times;</span>

@@ -14,16 +14,16 @@
 }
 
 .item-count {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color:white;
+    color: white;
     min-width: 2em;
     border-radius: 50%;
     vertical-align: middle;
     margin-left: 15px;
-    padding:7px;
+    padding: 7px;
 
     /* text-align:center;
     display:inline-block;
@@ -33,9 +33,36 @@
     border-radius: 50%; 
     background-color: rgba(255,255,255,0.2); */
 }
+
 .item-count :before {
-    content:'';
+    content: '';
     float: left;
     width: auto;
     padding-bottom: 100%;
+}
+
+.bump {
+    animation: bump 300ms ease-out;
   }
+
+  @keyframes bump {
+    0% {
+        transform: scale(1);
+    }
+
+    10% {
+        transform: scale(0.9);
+    }
+
+    30% {
+        transform: scale(1.1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
