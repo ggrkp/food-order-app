@@ -4,8 +4,7 @@
     align-items:center;
 }
 
-.disabled {
-    border: 1px solid #999999;
-    background-color: #cccccc;
-    color: #666666;
+.error{
+    color: rgb(145, 0, 0);
+    font-weight: bold;
 }

@@ -6,19 +6,21 @@ const MealsList = () => {
 
     const [meals, setMeals] = useState([])
     const [loading, setLoading] = useState(true)
+    const [error, setError] = useState('')
+
 
     const fetchHandler = useCallback(() => {
         setLoading(true)
-
-        // setTimeout(function () {
-        //     setLoading(false)
-        // }, 2000);//wait 2 seconds for testing purposes...
-
         const mealList = []
         fetch('https://react-http-56e5c-default-rtdb.firebaseio.com/Meals.json')
-            .then(response => response.json())
+            .then(response => {
+                if (response.ok) {
+                    return response.json()
+                } else {
+                    throw new Error('Failed to fetch data.')
+                }
+            })
             .then(data => {
-
                 for (let key in data) {
                     console.log(key)
                     mealList.push({ id: key, ...data[key] })
@@ -27,11 +29,14 @@ const MealsList = () => {
                 setLoading(false)
 
             })
-
+            .catch(err => {
+                setError(err)
+            })
     }, [])
 
     useEffect(() => {
         fetchHandler()
+
     }, [fetchHandler])
 
     let buttonText = "Loading..."
@@ -39,6 +44,10 @@ const MealsList = () => {
     if (!loading) {
         disabled = false
         buttonText = 'Load Meals'
+    }
+
+    if (loading && error) {
+        buttonText = 'Loading failed'
     }
 
     const menu = meals.map((meal) =>
@@ -53,9 +62,13 @@ const MealsList = () => {
     return (
         <>
             <ul className={styles["menu-container"]}>
-
                 <PrimaryButton disabled={disabled} onClick={fetchHandler}> {buttonText} </PrimaryButton>
-                {menu}
+                {error
+                    ?
+                    <p className={styles.error}> {`${error}`}</p>
+                    :
+                    menu
+                }
             </ul>
         </>
     )
