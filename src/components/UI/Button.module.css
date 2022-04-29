@@ -15,3 +15,9 @@
     .primary-button:hover {
         background: #d60e00;
     }
+
+    .primary-button:disabled {
+        background-color: #cccccc;
+        color: #666666;
+        cursor: wait;
+    }
