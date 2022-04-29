@@ -48,7 +48,7 @@ p {
 }
 
 .item-list {
-    min-height: 10rem;
+    /* min-height: 10px; */
     max-height: 30rem;
     overflow: scroll;
     overflow-x: hidden;
@@ -115,7 +115,7 @@ p {
 .total-amount {
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 @media only screen and (max-width: 850px) {

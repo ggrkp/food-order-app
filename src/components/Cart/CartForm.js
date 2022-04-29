@@ -45,7 +45,11 @@ const CartForm = (props) => {
             return;
         }
 
-        fetch('', )
+        props.onConfirm({ name: nameValue, street: streetValue, postalCode: postalValue, city: cityValue })
+
+        // submit form data to backend.
+
+        fetch('',)
         nameReset()
         postalReset()
         streetReset()
