@@ -1,18 +1,19 @@
 import styles from './CartModal.module.css'
 import ReactDom from 'react-dom'
+import CartForm from './CartForm'
 // ! εδω πρεπει να εμφανιζονται τα στοιχεια της λιστας αγορων.
 import PrimaryButton from '../UI/PrimaryButton'
 // import CartItemList from './CartItemList'
 import CartItem from './CartItem'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane, faDollarSign } from '@fortawesome/free-solid-svg-icons'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import CartContext from '../../store/cart-context'
 
 
 const CartModal = (props) => {
     const cartCtx = useContext(CartContext)
-
+    const [checkOut, setCheckOut] = useState(false)
     const cartItemRemoveHandler = (id) => {
         cartCtx.removeItem(id)
     }
@@ -37,7 +38,7 @@ const CartModal = (props) => {
     }
 
     const orderHandler = () => {
-        console.log('Ordering...')
+        setCheckOut(true)
     }
     // todo: Prosthiki modal slide down otan ginetai gia prwth fora render to component.
 
@@ -54,8 +55,11 @@ const CartModal = (props) => {
                     <div className={styles["item-list"]}>
                         {hasItems ? (itemList) : <p>Currently, there are no items in your cart.</p>}
                     </div>
+
+
                     {/* Order Button */}
-                    {hasItems > 0 &&
+                    {
+                        hasItems > 0 &&
                         <div className={styles["float-right"]}>
 
                             <div
@@ -63,21 +67,17 @@ const CartModal = (props) => {
                                 Total Amount: <FontAwesomeIcon icon={faDollarSign} /> {cartCtx.totalAmount.toFixed(2)}
                             </div>
 
-                            <div className={styles["btn-container"]}>
-                                <PrimaryButton
-                                    id="order-btn"
-                                    onClick={orderHandler}>
-                                    Place Order
-                                    <FontAwesomeIcon icon={faPaperPlane} />
-                                </PrimaryButton>
-                            </div>
-
-                        </div>}
+                            {!checkOut && <div className={styles["btn-container"]}>
+                                <PrimaryButton id="order-btn" onClick={orderHandler}>Place Order<FontAwesomeIcon icon={faPaperPlane} /></PrimaryButton>
+                            </div>}
+                        </div>
+                    }
 
                     <div className={styles.clearfix}></div>
 
-                </div>
-            </div>
+                    {checkOut && <CartForm />}
+                </div >
+            </div >
 
         )
     }

@@ -1,0 +1,58 @@
+.input, .label {
+    display: block;
+}
+
+.label{
+    font-weight: bold;
+}
+
+input[type=text] {
+    font-size: 18px;
+}
+
+.input, .select {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.input::-webkit-input-placeholder {
+    font-size: 18px;
+    line-height: 3;
+}
+
+
+.form-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 26px;
+    margin: auto;
+
+}
+
+.center-align, .mobile-form {
+    margin: 15px auto !important;
+    width: 70% !important;
+}
+
+.mobile-form {
+    justify-content: flex-start !important;
+    flex-direction: column !important;
+}
+
+.error{
+    font-size: 15px;
+    color: rgb(161, 9, 9)
+}
+
+
+@media only screen and (max-width: 1400px) { 
+    .center-align, .mobile-form {
+        margin: 15px auto !important;
+        width: 100% !important;
+    }
+
+}

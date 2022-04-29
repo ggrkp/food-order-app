@@ -16,8 +16,19 @@
         background: #d60e00;
     }
 
-    .primary-button:disabled {
-        background-color: #cccccc;
-        color: #666666;
-        cursor: wait;
+    .primary-button:disabled:hover,
+    .primary-button:disabled,
+    .primary-button:disabled:active {
+        background-color: #ccc;
+        border: none;
+        cursor: not-allowed;
+    }
+
+
+    .confirm-button {
+        background: #01b671;
+    }
+
+    .confirm-button:hover {
+        background: #00d684;
     }

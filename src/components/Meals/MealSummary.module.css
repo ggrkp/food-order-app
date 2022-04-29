@@ -16,7 +16,7 @@ h1{
   font-size:35px;
   font-family: 'Pacifico', cursive;
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 992px) {
   .summary {
     width: 60%;
     margin-top: 0;

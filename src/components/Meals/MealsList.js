@@ -36,7 +36,6 @@ const MealsList = () => {
 
     useEffect(() => {
         fetchHandler()
-
     }, [fetchHandler])
 
     let buttonText = "Loading..."
